@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "english-study": {
+      "command": "<YOUR_HOME>/miniforge3/envs/english-study-mcp/bin/python",
+      "args": ["-m", "english_study_mcp.server"],
+      "env": {
+        "ENGLISH_STUDY_CONFIG": "<ABSOLUTE_PATH_TO_REPO>/config/sheets_registry.yaml"
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+# 본인 Google Sheets 구조를 여기에 선언하세요.
+# 이 파일은 .gitignore에 포함되어 실제 사용 시 commit되지 않습니다.
+# 실제 사용 파일명: sheets_registry.yaml
+
+# Google Sheets URL의 /d/ 다음 문자열
+spreadsheet_id: "PUT_YOUR_SPREADSHEET_ID_HERE"
+
+# ============================================================
+# 활성 시트 (MCP가 add/update/search)
+# ============================================================
+sheets:
+  # 일반 학습 로그
+  daily:
+    tab_name: "daily"
+    columns:
+      - name: date
+        aliases: ["date", "날짜"]
+        auto_fill: today
+      - name: source
+        aliases: ["source", "출처", "link"]
+      - name: expression
+        aliases: ["expression", "phrase", "word", "표현"]
+        required: true
+      - name: meaning_kr
+        aliases: ["meaning", "뜻", "의미", "meaning_kr"]
+      - name: example1
+        aliases: ["example1", "ex1", "예문1"]
+      - name: example2
+        aliases: ["example2", "ex2", "예문2"]
+      - name: example3
+        aliases: ["example3", "ex3", "예문3"]
+      - name: note
+        aliases: ["note", "뉘앙스", "메모", "nuance"]
+
+  # 내 영어 → 교정
+  corrections:
+    tab_name: "corrections"
+    columns:
+      - name: date
+        auto_fill: today
+      - name: topic
+        aliases: ["topic", "주제"]
+      - name: my_version
+        aliases: ["my_version", "mine", "내표현", "original"]
+        required: true
+      - name: corrected
+        aliases: ["corrected", "correction", "교정"]
+        required: true
+      - name: reason
+        aliases: ["reason", "설명", "advice"]
+      - name: pronunciation_tip
+        aliases: ["pronunciation_tip", "pronunciation", "발음"]
+
+  # 발음 전용
+  pronunciation:
+    tab_name: "pronunciation"
+    columns:
+      - name: date
+        auto_fill: today
+      - name: source
+        aliases: ["source", "출처"]
+      - name: word_or_phrase
+        aliases: ["word", "phrase", "word_or_phrase", "단어"]
+        required: true
+      - name: phonetic
+        aliases: ["phonetic", "발음기호", "ipa"]
+      - name: tip
+        aliases: ["tip", "팁", "note"]
+
+  # Unit별 assertion
+  assertions:
+    tab_name: "assertions"
+    columns:
+      - name: unit
+        aliases: ["unit", "유닛"]
+        required: true
+      - name: assertion
+        aliases: ["assertion", "주장"]
+        required: true
+      - name: grounds
+        aliases: ["grounds", "basis", "근거"]
+
+  # 영상 번역 연습
+  translation:
+    tab_name: "translation"
+    columns:
+      - name: date
+        auto_fill: today
+      - name: link
+        aliases: ["link", "url", "source"]
+      - name: timestamp
+        aliases: ["timestamp", "time", "시간"]
+      - name: original
+        aliases: ["original", "영문", "english"]
+        required: true
+      - name: my_try
+        aliases: ["my_try", "내번역", "attempt"]
+      - name: correct_translation
+        aliases: ["correct_translation", "correct", "정답", "translation"]
+      - name: comment
+        aliases: ["comment", "코멘트"]

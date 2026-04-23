@@ -1,0 +1,61 @@
+# ===== 시크릿 (절대 커밋 금지) =====
+credentials.json
+token.json
+*.pem
+*.key
+.env
+.env.local
+.env.*.local
+
+# 본인 실제 설정값 (*.example.* 만 커밋)
+config/sheets_registry.yaml
+config/claude_desktop_config.json
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ===== 가상환경 =====
+venv/
+env/
+ENV/
+.venv/
+
+# ===== 테스트/커버리지 =====
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ===== MCP 로컬 로그 =====
+*.log
+logs/
