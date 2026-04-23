@@ -63,9 +63,7 @@ def run(
         found = client.find_row_by_key(schema, find_by_column, find_by_value)
         if found is None:
             return f"❌ '{schema.tab_name}' 시트에서 {find_by_column}='{find_by_value}' 인 행을 찾지 못했습니다."
-        row_number, existing = found
-    else:
-        existing = None
+        row_number, _ = found
 
     mapped = client.update_row(schema, row_number, updates)
 
